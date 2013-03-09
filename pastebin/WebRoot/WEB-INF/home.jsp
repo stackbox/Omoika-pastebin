@@ -1,5 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-<%@ taglib prefix="s" uri="/struts-tags" %>
+<%@ taglib prefix="s" uri="/struts-tags"%>
 <%
 	String path = request.getContextPath();
 	String basePath = request.getScheme() + "://"
@@ -36,8 +36,22 @@
 
 			<div id="navbar">
 				<ul>
-					<li><a href="login.action">Login</a></li>
-					<li><a href="register.action">Register</a></li>
+					<s:if test="%{#session.user=='public'}">
+						<li><a href="login.action">Login</a>
+						</li>
+						<li><a href="register.action">Register</a>
+						</li>
+					</s:if>
+
+					<s:else>
+						<li><a><s:property value="#session.user" />
+						</a>
+						</li>
+						<li><a href="quitaction">quit</a>
+						</li>
+					</s:else>
+
+
 				</ul>
 			</div>
 		</div>
@@ -52,6 +66,6 @@
 		</form>
 	</div>
 
-	<s:property value="#session.user"/>
+	<s:property value="#session.user" />
 </body>
 </html>

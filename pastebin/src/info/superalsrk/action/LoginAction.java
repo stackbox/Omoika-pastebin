@@ -29,15 +29,20 @@ public class LoginAction extends ActionSupport {
 	@Override
 	public String execute() throws Exception {
 		// TODO Auto-generated method stub
-		
-		if(LoginAndRegistService.checkLogin(user) == false) {
+		if (user.getUsername().equals("public")) {
+			
 			return Action.ERROR;
 		} else {
-			Map<String, Object> session = ActionContext.getContext().getSession();
-			session.put("user", user.getUsername());
+
+			if (LoginAndRegistService.checkLogin(user)) {
+				Map<String, Object> session = ActionContext.getContext()
+						.getSession();
+				session.put("user", user.getUsername());
+				return Action.SUCCESS;
+			} else {
+				return Action.ERROR;
+			}
 		}
-		
-		return super.execute();
 	}
 
 }

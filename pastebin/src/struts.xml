@@ -38,15 +38,22 @@
 		
 		 
 		<action name="loginaction" class="info.superalsrk.action.LoginAction">
-			<result name="error">/WEB-INF/login.jsp</result>
-			<result name="success">/WEB-INF/home.jsp</result>
+			<result name="error" >/404.html</result>
+			<result name="success" type="redirectAction">home</result>
 		</action>
 		  
 		<action name="registaction" class="info.superalsrk.action.RegistAction">
-			<result name="success"> /WEB-INF/home.jsp</result>
+			<result name="success" type="redirectAction">home</result>
 			<result name="error">/404.html</result>
 		</action>
 		
+		<action name="postaction" class="info.superalsrk.action.PostAction">
+			<result name="success">/WEB-INF/showpost.jsp</result>
+		</action>
+		
+		<action name="quitaction" class="info.superalsrk.action.QuitAction">
+		<result name="success" type="redirectAction">home</result>
+		</action>
 	</package>
 
 </struts>
