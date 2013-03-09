@@ -1,0 +1,56 @@
+body, div, ul, li, h1, h2, h3, h4, h5, h6, form, fieldset, legend, input, textarea, p, th, td, dl, dt, dd {
+margin: 0;
+padding: 0;
+
+}
+
+
+div {
+	text-align:left;
+}
+
+#head {
+	height: 30px;
+	line-height:30px;
+	overflow:hidden;
+	margin: 0;
+	padding-left:30px;
+	background: #f3f3f3;
+	border-bottom:solid 1px rgb(217,224,214);
+}
+
+#title {
+	float:left;
+	width:10%;
+}
+
+#navbar,#navbar li {
+	float:right;
+	list-style:none;
+	padding:0;
+	margin:0;
+}
+
+#navbar li {
+	float: left;
+}
+
+#navbar li a {
+	font-size:9px;
+	display:block;
+	padding:0px 10px;
+	color:#000;
+	text-decoration:none;
+	}
+	
+#content {
+	padding-left:10%;
+	padding-right:10%;
+	
+	margin-top:10px;
+}
+
+#content textarea {
+	margin-left:10px;
+	margin-right:10px;
+}
